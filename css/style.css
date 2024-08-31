@@ -307,9 +307,9 @@ h1,h2,h3,h4,h5,h6 {
     background: #c4302b;
     box-shadow: 0 0 50px #c4302b;
 }
-.discord a:hover {
-    background: #5662f6;
-    box-shadow: 0 0 50px #5662f6;
+.github a:hover {
+    background: #212830;
+    box-shadow: 0 0 50px #505e6e;
 }
 
 

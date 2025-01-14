@@ -8,7 +8,9 @@ body{
     line-height: 1;
     color: #ffffff;
     /* background: linear-gradient(90deg, #0c131f, #6f8698, #566073); */
-    
+    -webkit-user-select: none;  /* Safari */
+    -ms-user-select: none;      /* IE 10 and IE 11 */
+    user-select: none;          /* Standard syntax */
 }
 *,
 *:before,

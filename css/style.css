@@ -7,10 +7,9 @@ body{
     font-size: 16px;
     line-height: 1;
     color: #ffffff;
-    /* background: linear-gradient(90deg, #0c131f, #6f8698, #566073); */
-    -webkit-user-select: none;  /* Safari */
-    -ms-user-select: none;      /* IE 10 and IE 11 */
-    user-select: none;          /* Standard syntax */
+    webkit-user-select: none;  /* Safari */
+    ms-user-select: none;      /* IE 10 and IE 11 */
+   user-select: none;          /* Standard syntax */
 }
 *,
 *:before,
@@ -112,6 +111,10 @@ body{
     color:rgb(255, 255, 255)
 }
 
+
+
+
+
 .credits {
     text-align: center;
     color: #ffffff42;
@@ -119,6 +122,16 @@ body{
     position: absolute;
     max-width: 1200px;
     width: 100%;
+}
+
+.version {
+    text-align: center;
+    color: #ffffff42;
+    font-weight: 200;
+    margin: 0 0 0 0;
+    max-width: 1200px;
+    width: 100%;
+    padding-top: 30px;
 }
 
 h1,h2,h3,h4,h5,h6 {
@@ -274,6 +287,21 @@ h1,h2,h3,h4,h5,h6 {
 }
 
 
+
+
+
+#updateJSON {
+    background-color: rgba(255, 255, 255, 0.04);
+    padding: 20px;
+    border-radius: 50px;
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 15px;
+}
+
+
 .social {display: inline-block;}
 .social a {
 	display: block;
@@ -320,7 +348,7 @@ display: flex;
 color: #fff;
 background-color: #7636d7;
 transition: all 1s cubic-bezier(0.165, 0.84, 0.44, 1);
-border-radius: 50px;
+border-radius: 5px;
 justify-content: center;
 align-items: center;
 position: relative;
@@ -332,7 +360,6 @@ text-decoration: none;
 .yoomoney:hover {
     font-weight: 700;
     box-shadow: 0 0 100px #f7f7f73a;
-    transform: scale(1.05, 1.05);
 }
 
 .footer {

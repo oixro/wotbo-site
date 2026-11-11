@@ -1,218 +1,253 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title>WOTBO</title>
-        <meta name="description" content="">
-        <link rel="icon" href="img/icon.ico" type="image/x-icon">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="css/style.css">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-        
-    </head>
-    <body class="gradient">
-        <header class="header">
-            <div class="container"> 
-                <div class="header_inner">
-                    <div class="header_logo">WOTBO</div>
-                    <nav class="nav">
-                        <a class="nav_link" href="#">Главная</a>
-                        <a class="nav_link" href="#tweaks">Твики</a>
-                        <a class="nav_link" href="#advantadge">Преимущества</a>
-                        <a class="nav_link" href="#updates">Обновления</a>
-                        <a class="nav_link" href="#guides">Гайды</a>
-                        <a class="nav_link" href="#donate">Поддержка</a>
-                    </nav>
-                </div>
-            </div>
-        </header>
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>WOTBO — оптимизация Windows с открытым исходным кодом</title>
+    <meta name="description" content="WOTBO — бесплатный инструмент оптимизации Windows: твики реестра, настройки интерфейса, снижение задержек ввода и набор нужных программ в одном месте.">
+    <meta name="theme-color" content="#04060b">
+    <link rel="canonical" href="https://wotbo.pro/">
 
-        <div class="footer">
-            <div class="social telegram">
-                <a href="https://t.me/oixro" target="_blank">
-                    <svg role="img" viewBox="0 0 448 512">
-                        <path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/>
-                    </svg>
-                </a>
-            </div>
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="WOTBO">
+    <meta property="og:locale" content="ru_RU">
+    <meta property="og:url" content="https://wotbo.pro/">
+    <meta property="og:title" content="WOTBO — оптимизация Windows с открытым исходным кодом">
+    <meta property="og:description" content="Бесплатный инструмент оптимизации Windows: твики реестра, настройки интерфейса, снижение задержек ввода.">
+    <meta property="og:image" content="https://wotbo.pro/img/wotbo1.png">
+    <meta name="twitter:card" content="summary_large_image">
 
-            <div class="social vk">
-                <a href="https://vk.com/oixro" target="_blank">
-                    <svg role="img" viewBox="0 0 576 512">
-                        <path fill="currentColor" d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z"/>
-                    </svg>
-                </a>
-            </div>
+    <link rel="icon" href="img/icon.ico" sizes="any">
+    <link rel="apple-touch-icon" href="img/icon.ico">
 
-            <div class="social youtube">
-                <a href="https://www.youtube.com/c/oixro" target="_blank">
-                    <svg role="img" viewBox="0 0 576 512">
-                        <path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/>
-                    </svg>
-                </a>
-            </div>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..800&amp;display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
 
-            <div class="social github">
-                <a href="https://github.com/oixro/WOTBO-DARK-Source" target="_blank">
-                    <svg role="img" viewBox="0 0 512 512"><path d="M8 0C3.58 0 0 3.58 0 8C0 11.54 2.29 14.53 5.47 15.59C5.87 15.66 6.02 15.42 6.02 15.21C6.02 15.02 6.01 14.39 6.01 13.72C4 14.09 3.48 13.23 3.32 12.78C3.23 12.55 2.84 11.84 2.5 11.65C2.22 11.5 1.82 11.13 2.49 11.12C3.12 11.11 3.57 11.7 3.72 11.94C4.44 13.15 5.59 12.81 6.05 12.6C6.12 12.08 6.33 11.73 6.56 11.53C4.78 11.33 2.92 10.64 2.92 7.58C2.92 6.71 3.23 5.99 3.74 5.43C3.66 5.23 3.38 4.41 3.82 3.31C3.82 3.31 4.49 3.1 6.02 4.13C6.66 3.95 7.34 3.86 8.02 3.86C8.7 3.86 9.38 3.95 10.02 4.13C11.55 3.09 12.22 3.31 12.22 3.31C12.66 4.41 12.38 5.23 12.3 5.43C12.81 5.99 13.12 6.7 13.12 7.58C13.12 10.65 11.25 11.33 9.47 11.53C9.76 11.78 10.01 12.26 10.01 13.01C10.01 14.08 10 14.94 10 15.21C10 15.42 10.15 15.67 10.55 15.59C13.71 14.53 16 11.53 16 8C16 3.58 12.42 0 8 0Z" transform="scale(32)" fill="#ffffff"></svg>
-                </a>
-            </div>
-          </div>
-
-        <div class="intro">
-            <div class="container">
-                <div class="intro_inner">
-                    <h1 id="main" class="intro_title">WOTBO</h1>
-                    <h2 class="intro_subtitle">Windows optimization tool by oixro</h2>
-                    <a class="Download" href="https://github.com/oixro/WOTBO/raw/main/WOTBO.exe" download="">скачать</a>
-                </div>
-                <p class="credits">oixro ® 2025</p>
-                <p id="version" class="version">Last version: </p>
-                <script>
-                    // Функция для загрузки текста из файла
-                    function loadFile(url, callback) {
-                        var xhr = new XMLHttpRequest();
-                        xhr.overrideMimeType("application/json");
-                        xhr.open('GET', url, true);
-                        xhr.onreadystatechange = function () {
-                            if (xhr.readyState === 4 && xhr.status === 200) {
-                                callback(xhr.responseText);
-                            }
-                        };
-                        xhr.send(null);
-                    }
-                
-                    // Загружаем файл и выводим его содержимое
-                    loadFile('https://raw.githubusercontent.com/oixro/WOTBO/refs/heads/main/ver.json', function(result) {
-                        var container = document.getElementById('version');
-                        container.innerText += result; // Просто добавляем текст из файла
-                    });
-                </script>
-            </div>
-         </div>
-
-         <div id="tweaks" class="intro">
-            <div class="container">
-                <div class="intro_inner">
-                    <h2  class="section_title">Краткое описание твиков</h2>
-                    <div class="section_text">
-                        <p>
-                            WOTBO содержит множество полезных твиков нацеленых на повышение производительности системы, снижения задержек ввода, а так же для повышения комфортности использования вашего ПК
-                        </p>
-                    </div>
-                </div>
-                <div class="about">
-                    <div class="about_item1">
-                        <div class="about_image">
-                            <img src="img/wotbo1.png" alt="">
-                            <div class="overlay">
-                                <p>Включает в себя самые необходимые настройки реестра Windows</p>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="about_item2">
-                        <div class="about_image">
-                            <img src="img/wotbo2.png" alt="">
-                            <div class="overlay">
-                                <p>Позволяет сделать интерфейс Windows удобнее и приятнее</p>
-                            </div>
-                        </div>
-                    </div> 
-                    <div class="about_item3">
-                        <div class="about_image">
-                            <img src="img/wotbo3.png" alt="">
-                            <div class="overlay">
-                                <p>Все нужные программы в одном месте</p>
-                            </div>
-                        </div>
-                    </div> 
-                </div>
-                </div>
-            </div>
-         </div>
-
-
-
-         <div id="advantadge" class="intro">
-            <div class="container">
-                <div class="intro_inner">
-                    <h2 class="section_title">Главные преимущества</h2>
-                    <div class="section_text">
-                        <p>
-                            1. WOTBO имеет <b>открытый исходный код</b>, что делает работу программы полностью прозрачной.
-                        </p>
-                        <p>
-                            2. Соответственно программа является полностью <b>бесплатной!</b> И создаётся на добровольной основе.
-                        </p>
-                        <p>
-                            3. WOTBO включает в себя большинство твиков из платных решений по оптимизации Windows.
-                        </p>
-                    </div>
-                </div>
-            </div>
-         </div>
-         <div id="updates" class="intro">
-            <div class="container">
-                <div class="intro_inner">
-                    <h2 class="section_title">Последнее обновление</h2>
-                    <div class="section_text">
-                        <div id="updateJSON"></div>
-                        <script>
-                            // Функция для загрузки текста из файла
-                            function loadFile(url, callback) {
-                                var xhr = new XMLHttpRequest();
-                                xhr.overrideMimeType("application/json");
-                                xhr.open('GET', url, true);
-                                xhr.onreadystatechange = function () {
-                                    if (xhr.readyState === 4 && xhr.status === 200) {
-                                        callback(xhr.responseText);
-                                    }
-                                };
-                                xhr.send(null);
-                            }
-                
-                            // Загружаем файл и выводим его содержимое
-                            loadFile('https://raw.githubusercontent.com/oixro/WOTBO/refs/heads/main/lastchange.json', function(result) {
-                                var container = document.getElementById('updateJSON');
-                                // Заменяем каждый символ "[" на "\n[", чтобы он начинался с новой строки
-                                var formattedText = result.replace(/\[/g, '\n[');
-                                // Разбиваем текст на строки и оборачиваем каждую в тег <p>
-                                var lines = formattedText.split('\n');
-                                var htmlText = lines.map(line => `<p>${line}</p>`).join('');
-                                container.innerHTML = htmlText;
-                            });
-                        </script>
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-
-         <div id="guides" class="intro">
-            <div class="container">
-                <div class="intro_inner">
-                    <h2 class="section_title">Гайды по WOTBO</h2>
-                    <div class="section_text">
-                        <iframe class="iframe" width="840" height="472" src="https://www.youtube.com/embed/videoseries?si=HubfbDd5nb-21Q1W&amp;list=PLjWyGi5q-mOXJYU0YQW-LEpbJ5K7wCxgH" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                    </div>
-                </div>
-            </div>
-         </div>
-         <div id="donate" class="intro">
-            <div class="container">
-                <div class="intro_inner">
-                    <h2 class="section_title">Поддержка разработчика</h2>
-                    <div class="section_text">
-                        <iframe class="yoomoney" src="https://widget.donatepay.ru/widgets/page/95902bca6a84c8c4389f0b8ef1f8d4c6b8240e06f00b9ccb0aabe00b5d99f7ad?widget_id=5999652&sum=200" width="510" height="220" frameBorder="0"></iframe>
-                    </div>
-                </div>
-            </div>
-         </div>
-    </body>
-    <script>
-        
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "WOTBO",
+        "url": "https://wotbo.pro/",
+        "operatingSystem": "Windows",
+        "applicationCategory": "UtilitiesApplication",
+        "description": "Бесплатный инструмент оптимизации Windows с открытым исходным кодом.",
+        "downloadUrl": "https://github.com/oixro/WOTBO/raw/main/WOTBO.exe",
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+        "author": { "@type": "Person", "name": "oixro" }
+    }
     </script>
+</head>
+<body>
+    <a class="skip-link" href="#main">Перейти к содержимому</a>
+
+    <header class="header" id="header">
+        <div class="container header__inner">
+            <a class="logo" href="#main">WOTBO<span class="logo__dot" aria-hidden="true">.</span></a>
+
+            <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
+                <span class="burger__line" aria-hidden="true"></span>
+                <span class="burger__line" aria-hidden="true"></span>
+                <span class="burger__line" aria-hidden="true"></span>
+            </button>
+
+            <nav class="nav" id="nav" aria-label="Основная навигация">
+                <ul class="nav__list">
+                    <li><a class="nav__link" href="#main">Главная</a></li>
+                    <li><a class="nav__link" href="#tweaks">Твики</a></li>
+                    <li><a class="nav__link" href="#advantages">Преимущества</a></li>
+                    <li><a class="nav__link" href="#updates">Обновления</a></li>
+                    <li><a class="nav__link" href="#guides">Гайды</a></li>
+                    <li><a class="nav__link" href="#donate">Поддержка</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container hero__inner">
+                <h1 class="hero__title" id="hero-title">WOTBO</h1>
+                <p class="hero__subtitle">Windows optimization tool by oixro</p>
+
+                <div class="hero__actions">
+                    <a class="btn btn--primary" href="https://github.com/oixro/WOTBO/raw/main/WOTBO.exe" download>
+                        Скачать
+                        <span class="btn__hint">Windows 10 / 11</span>
+                    </a>
+                </div>
+
+                <p class="hero__version">
+                    Последняя версия: <span class="badge" id="version">—</span>
+                </p>
+
+                <ul class="socials" aria-label="Ссылки на автора">
+                    <li>
+                        <a class="social social--telegram" href="https://t.me/oixro" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                            <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 448 512">
+                                <path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social social--vk" href="https://vk.com/oixro" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
+                            <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 576 512">
+                                <path fill="currentColor" d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social social--youtube" href="https://www.youtube.com/c/oixro" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 576 512">
+                                <path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/>
+                            </svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a class="social social--github" href="https://github.com/oixro/WOTBO-DARK-Source" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 512 512">
+                                <path fill="currentColor" d="M256 32C132.3 32 32 132.3 32 256c0 99.1 64.2 183.2 153.3 212.9 11.2 2.1 15.3-4.9 15.3-10.8 0-5.3-.2-19.4-.3-38.1-62.4 13.6-75.6-30.1-75.6-30.1-10.2-25.9-24.9-32.8-24.9-32.8-20.4-13.9 1.5-13.6 1.5-13.6 22.5 1.6 34.4 23.1 34.4 23.1 20 34.3 52.5 24.4 65.3 18.6 2-14.5 7.8-24.4 14.2-30-49.8-5.7-102.2-24.9-102.2-110.9 0-24.5 8.8-44.5 23.1-60.2-2.3-5.7-10-28.6 2.2-59.6 0 0 18.8-6 61.6 23 17.9-5 37.1-7.5 56.2-7.6 19.1.1 38.3 2.6 56.2 7.6 42.8-29 61.6-23 61.6-23 12.2 31 4.5 53.9 2.2 59.6 14.4 15.7 23.1 35.7 23.1 60.2 0 86.2-52.5 105.1-102.4 110.7 8.1 6.9 15.2 20.6 15.2 41.5 0 30-0.3 54.2-0.3 61.6 0 5.9 4 13 15.4 10.8C415.9 439.2 480 355.1 480 256 480 132.3 379.7 32 256 32z"/>
+                            </svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="section" id="tweaks" aria-labelledby="tweaks-title">
+            <div class="container">
+                <header class="section__head reveal">
+                    <h2 class="section__title" id="tweaks-title">Краткое описание твиков</h2>
+                    <p class="section__lead">
+                        WOTBO содержит множество полезных твиков, нацеленных на повышение производительности системы,
+                        снижение задержек ввода и повышение комфорта при использовании ПК.
+                    </p>
+                </header>
+
+                <div class="cards reveal">
+                    <article class="card">
+                        <div class="card__media">
+                            <img src="img/wotbo1.png" width="390" height="305" loading="lazy" decoding="async"
+                                 alt="Скриншот WOTBO: список твиков реестра Windows">
+                        </div>
+                        <h3 class="card__title">Реестр Windows</h3>
+                        <p class="card__text">Самые необходимые настройки реестра Windows — без ручного поиска по веткам.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card__media">
+                            <img src="img/wotbo2.png" width="390" height="305" loading="lazy" decoding="async"
+                                 alt="Скриншот WOTBO: настройки интерфейса Windows">
+                        </div>
+                        <h3 class="card__title">Интерфейс</h3>
+                        <p class="card__text">Делает интерфейс Windows удобнее и приятнее в повседневной работе.</p>
+                    </article>
+
+                    <article class="card">
+                        <div class="card__media">
+                            <img src="img/wotbo3.png" width="390" height="305" loading="lazy" decoding="async"
+                                 alt="Скриншот WOTBO: установка нужных программ">
+                        </div>
+                        <h3 class="card__title">Программы</h3>
+                        <p class="card__text">Все нужные программы в одном месте — ставится в пару кликов.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="advantages" aria-labelledby="advantages-title">
+            <div class="container">
+                <header class="section__head reveal">
+                    <h2 class="section__title" id="advantages-title">Главные преимущества</h2>
+                </header>
+
+                <div class="features reveal">
+                    <article class="feature">
+                        <span class="feature__num" aria-hidden="true">01</span>
+                        <h3 class="feature__title">Открытый код</h3>
+                        <p class="feature__text">Исходный код открыт, поэтому работа программы полностью прозрачна.</p>
+                    </article>
+
+                    <article class="feature">
+                        <span class="feature__num" aria-hidden="true">02</span>
+                        <h3 class="feature__title">Бесплатно</h3>
+                        <p class="feature__text">Программа полностью бесплатна и создаётся на добровольной основе.</p>
+                    </article>
+
+                    <article class="feature">
+                        <span class="feature__num" aria-hidden="true">03</span>
+                        <h3 class="feature__title">Почти всё в одном</h3>
+                        <p class="feature__text">Включает большинство твиков из платных решений по оптимизации Windows.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="updates" aria-labelledby="updates-title">
+            <div class="container">
+                <header class="section__head reveal">
+                    <h2 class="section__title" id="updates-title">Последнее обновление</h2>
+                    <p class="section__lead muted" id="changelog-meta">Загрузка списка изменений…</p>
+                </header>
+
+                <div class="changelog reveal" id="changelog" aria-live="polite" aria-busy="true">
+                    <p class="muted">Загрузка…</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="guides" aria-labelledby="guides-title">
+            <div class="container">
+                <header class="section__head reveal">
+                    <h2 class="section__title" id="guides-title">Гайды по WOTBO</h2>
+                    <p class="section__lead">Видео о настройке и использовании программы.</p>
+                </header>
+
+                <div class="video reveal">
+                    <iframe
+                        src="https://www.youtube.com/embed/videoseries?list=PLjWyGi5q-mOXJYU0YQW-LEpbJ5K7wCxgH"
+                        title="Плейлист с гайдами по WOTBO"
+                        loading="lazy"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        referrerpolicy="strict-origin-when-cross-origin"
+                        allowfullscreen></iframe>
+                </div>
+            </div>
+        </section>
+
+        <section class="section section--last" id="donate" aria-labelledby="donate-title">
+            <div class="container">
+                <header class="section__head reveal">
+                    <h2 class="section__title" id="donate-title">Поддержка разработчика</h2>
+                    <p class="section__lead">Проект развивается на добровольной основе — любая поддержка помогает выпускать обновления.</p>
+                </header>
+
+                <div class="donate reveal">
+                    <iframe
+                        src="https://widget.donatepay.ru/widgets/page/95902bca6a84c8c4389f0b8ef1f8d4c6b8240e06f00b9ccb0aabe00b5d99f7ad?widget_id=5999652&amp;sum=200"
+                        title="Виджет поддержки разработчика"
+                        loading="lazy"></iframe>
+                </div>
+
+                <p class="donate__fallback">
+                    Виджет не отображается?
+                    <a href="https://widget.donatepay.ru/widgets/page/95902bca6a84c8c4389f0b8ef1f8d4c6b8240e06f00b9ccb0aabe00b5d99f7ad?widget_id=5999652&amp;sum=200"
+                       target="_blank" rel="noopener noreferrer">Открыть страницу поддержки в новой вкладке</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer__inner">
+            <p class="footer__copy">© <span id="year">2025</span> oixro</p>
+            <p class="footer__note">Сайт не связан с Microsoft Corporation. Windows — торговая марка Microsoft.</p>
+            <a class="footer__top" href="#main">Наверх ↑</a>
+        </div>
+    </footer>
+
+    <script src="js/main.js" defer></script>
+</body>
 </html>

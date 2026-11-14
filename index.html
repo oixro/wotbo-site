@@ -19,9 +19,9 @@
     <meta property="og:image" content="https://wotbo.pro/img/main.png">
     <meta name="twitter:card" content="summary_large_image">
 
-    <link rel="icon" href="img/icon.ico" sizes="any">
-    <link rel="apple-touch-icon" href="img/icon.ico">
-    <link rel="stylesheet" href="css/style.css?v=20261114b">
+    <link rel="icon" href="img/icon.png" type="image/png" sizes="192x192">
+    <link rel="apple-touch-icon" href="img/icon.png">
+    <link rel="stylesheet" href="css/style.css?v=20261114c">
 
     <script type="application/ld+json">
     {
@@ -45,6 +45,7 @@
     <header class="header" id="header">
         <div class="container header__inner">
             <a class="logo" href="#main">
+                <img class="logo__mark" src="img/icon.png" alt="" width="26" height="26" decoding="async">
                 <span class="logo__name">WOTBO</span>
                 <span class="logo__tagline">Windows optimization tool</span>
             </a>
@@ -76,7 +77,7 @@
             <div class="container hero__grid">
                 <div class="hero__copy">
                     <p class="eyebrow">Windows 10 · 11 / x64 / <span id="version">v2.33</span></p>
-                    <h1 class="hero__title">Твики для Windows, которые можно откатить</h1>
+                    <h1 class="hero__title">Твики для Windows, которые можно <span class="hl">откатить</span></h1>
                     <p class="hero__lead">
                         WOTBO меняет реестр, питание, GPU и проводник и запоминает исходные значения,
                         чтобы вернуть всё назад. 48 твиков, открытый код, без подписок.
@@ -134,7 +135,7 @@
                 </header>
 
                 <div class="cards reveal">
-                    <figure class="card">
+                    <figure class="card" data-accent="1">
                         <img src="img/main.png" width="420" height="320" loading="lazy" decoding="async"
                              alt="Раздел «Основное»: реестр, Defender, схема питания, MPO, USB">
                         <figcaption>
@@ -144,7 +145,7 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="card">
+                    <figure class="card" data-accent="3">
                         <img src="img/gpu.png" width="420" height="320" loading="lazy" decoding="async"
                              alt="Раздел «GPU»: HDCP, NVIDIA, Ansel, DirectPlay, NV CleanInstall и DDU">
                         <figcaption>
@@ -154,7 +155,7 @@
                         </figcaption>
                     </figure>
 
-                    <figure class="card">
+                    <figure class="card" data-accent="5">
                         <img src="img/programs.png" width="420" height="320" loading="lazy" decoding="async"
                              alt="Раздел «Скачать проги»: список из 23 программ для установки">
                         <figcaption>
@@ -176,37 +177,37 @@
                 </header>
 
                 <div class="panels reveal">
-                    <article class="panel">
+                    <article class="panel" data-accent="1">
                         <p class="panel__num" aria-hidden="true">1</p>
                         <h3>Основное</h3>
                         <p>Реестр, Defender, схема питания, гибернация, файл подкачки, MPO, USB, Spectre/Meltdown, MMAgent, Win32Priority.</p>
                     </article>
 
-                    <article class="panel">
+                    <article class="panel" data-accent="2">
                         <p class="panel__num" aria-hidden="true">2</p>
                         <h3>Интерфейс</h3>
                         <p>Кнопки окон, старая шапка проводника, контекстное меню Windows 11, синие папки, полупрозрачный проводник, анимации.</p>
                     </article>
 
-                    <article class="panel">
+                    <article class="panel" data-accent="3">
                         <p class="panel__num" aria-hidden="true">3</p>
                         <h3>GPU</h3>
                         <p>HDCP, NVIDIA и Nvidia Profile Inspector, Ansel, DirectPlay, NV CleanInstall, DDU.</p>
                     </article>
 
-                    <article class="panel">
+                    <article class="panel" data-accent="4">
                         <p class="panel__num" aria-hidden="true">4</p>
                         <h3>Дополнительно</h3>
                         <p>Политики Edge, удаление OneDrive, очистка WinSxS и обновлений, CompactOS, ffmpeg, закрепление окон.</p>
                     </article>
 
-                    <article class="panel">
+                    <article class="panel" data-accent="5">
                         <p class="panel__num" aria-hidden="true">5</p>
                         <h3>Скачать проги</h3>
                         <p>23 программы: браузеры, утилиты, кодеки. Ссылки ведут на актуальные версии.</p>
                     </article>
 
-                    <article class="panel">
+                    <article class="panel" data-accent="6">
                         <p class="panel__num" aria-hidden="true">6</p>
                         <h3>PC Info</h3>
                         <p>Процессор, материнская плата, GPU, объём ОЗУ, экран, версия Windows и дата установки.</p>

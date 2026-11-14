@@ -295,14 +295,33 @@ ul {
     position: relative;
 }
 
-.tag {
-    display: inline-block;
+/* Расшифровка WOTBO: буква над своим словом */
+.acronym {
+    display: inline-grid;
+    grid-template-columns: repeat(5, auto);
+    justify-items: center;
+    align-items: baseline;
+    column-gap: 18px;
+    row-gap: 7px;
+    margin: 0 0 24px;
+    padding: 12px 18px 14px;
     border: 1px solid var(--bd);
-    border-radius: 99px;
-    padding: 5px 14px;
-    font-size: 13px;
+    border-radius: 14px;
     color: var(--mut);
-    margin-bottom: 22px;
+}
+
+.acronym__letter {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    color: var(--fg);
+}
+
+.acronym__word {
+    font-size: 12px;
+    line-height: 1.2;
+    white-space: nowrap;
 }
 
 .hero h1 {
@@ -614,6 +633,18 @@ footer {
     color: var(--mut);
     font-size: 14px;
     max-width: 300px;
+}
+
+.fg__tagline {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-size: 13px;
+    color: var(--mut);
+    margin-bottom: 12px;
+}
+
+.fg__tagline b {
+    font-weight: 600;
+    color: var(--fg);
 }
 
 .fg__brand .logo {
@@ -930,6 +961,19 @@ footer {
 
     .stats strong {
         font-size: 34px;
+    }
+
+    .acronym {
+        column-gap: 10px;
+        padding: 10px 12px 12px;
+    }
+
+    .acronym__word {
+        font-size: 11px;
+    }
+
+    .acronym__letter {
+        font-size: 10px;
     }
 
     .beta {

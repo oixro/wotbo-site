@@ -1,406 +1,390 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" data-theme="dark">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="color-scheme" content="light dark">
-    <title>WOTBO — твики для Windows с откатом</title>
-    <meta name="description" content="WOTBO — бесплатный инструмент оптимизации Windows с открытым кодом: 48 твиков для реестра, интерфейса, GPU и очистки. Каждый твик можно откатить. Windows 10 и 11, x64.">
-    <meta name="theme-color" content="#F4F5F7" media="(prefers-color-scheme: light)">
-    <meta name="theme-color" content="#0E1319" media="(prefers-color-scheme: dark)">
-    <link rel="canonical" href="https://wotbo.pro/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>WOTBO — оптимизация Windows</title>
+<meta name="description" content="WOTBO — бесплатный инструмент тонкой настройки Windows с открытым кодом: 48 твиков реестра, очистка, GPU и откат изменений в один клик.">
+<meta name="theme-color" content="#0a0a0a" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<link rel="canonical" href="https://wotbo.pro/">
 
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="WOTBO">
-    <meta property="og:locale" content="ru_RU">
-    <meta property="og:url" content="https://wotbo.pro/">
-    <meta property="og:title" content="WOTBO — твики для Windows с откатом">
-    <meta property="og:description" content="48 твиков для Windows: реестр, интерфейс, GPU, очистка. Каждый применяется и откатывается отдельно. Открытый код, бесплатно.">
-    <meta property="og:image" content="https://wotbo.pro/img/main.png">
-    <meta name="twitter:card" content="summary_large_image">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="WOTBO">
+<meta property="og:locale" content="ru_RU">
+<meta property="og:url" content="https://wotbo.pro/">
+<meta property="og:title" content="WOTBO — оптимизация Windows">
+<meta property="og:description" content="48 твиков для Windows: реестр, интерфейс, GPU, очистка. Каждый применяется и откатывается отдельно.">
+<meta property="og:image" content="https://wotbo.pro/img/main.png">
+<meta name="twitter:card" content="summary_large_image">
 
-    <link rel="icon" href="img/icon.png" type="image/png" sizes="192x192">
-    <link rel="apple-touch-icon" href="img/icon.png">
-    <link rel="stylesheet" href="css/style.css?v=20261114c">
+<link rel="icon" href="img/icon.png" type="image/png" sizes="192x192">
+<link rel="apple-touch-icon" href="img/icon.png">
+<link rel="stylesheet" href="css/style.css?v=20261114d">
 
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "SoftwareApplication",
-        "name": "WOTBO",
-        "url": "https://wotbo.pro/",
-        "softwareVersion": "2.33",
-        "operatingSystem": "Windows 10, Windows 11",
-        "applicationCategory": "UtilitiesApplication",
-        "description": "Бесплатный инструмент оптимизации Windows с открытым исходным кодом: 48 обратимых твиков.",
-        "downloadUrl": "https://github.com/oixro/WOTBO/raw/main/WOTBO.exe",
-        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
-        "author": { "@type": "Person", "name": "oixro" }
-    }
-    </script>
+<script>
+/* тема до первой отрисовки — без вспышки */
+(function () {
+    var theme = "dark";
+    try {
+        theme = localStorage.getItem("wotbo-theme") ||
+            (window.matchMedia && matchMedia("(prefers-color-scheme: light)").matches ? "light" : "dark");
+    } catch (error) { /* приватный режим */ }
+    document.documentElement.setAttribute("data-theme", theme);
+})();
+</script>
+
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "name": "WOTBO",
+    "url": "https://wotbo.pro/",
+    "softwareVersion": "2.33",
+    "operatingSystem": "Windows 10, Windows 11",
+    "applicationCategory": "UtilitiesApplication",
+    "description": "Бесплатный инструмент настройки Windows с открытым исходным кодом: 48 обратимых твиков.",
+    "downloadUrl": "https://github.com/oixro/WOTBO/raw/main/WOTBO.exe",
+    "offers": { "@type": "Offer", "price": "0", "priceCurrency": "RUB" },
+    "author": { "@type": "Person", "name": "oixro" }
+}
+</script>
 </head>
 <body>
-    <a class="skip-link" href="#main">Перейти к содержимому</a>
+<a class="skip-link" href="#main">Перейти к содержимому</a>
 
-    <header class="header" id="header">
-        <div class="container header__inner">
-            <a class="logo" href="#main">
-                <img class="logo__mark" src="img/icon.png" alt="" width="26" height="26" decoding="async">
-                <span class="logo__name">WOTBO</span>
-                <span class="logo__tagline">Windows optimization tool</span>
-            </a>
+<nav class="nav" id="nav">
+    <div class="wrap nav__inner">
+        <a class="logo" href="#top">
+            <span class="logo__mark"><img src="img/icon.png" alt="" width="32" height="32" decoding="async"></span>
+            <span class="logo__text">WOTBO</span>
+        </a>
 
-            <button class="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="nav">
-                <span class="burger__line" aria-hidden="true"></span>
-                <span class="burger__line" aria-hidden="true"></span>
-                <span class="burger__line" aria-hidden="true"></span>
+        <div class="links" id="links">
+            <a href="#features">Функции</a>
+            <a href="#how">Как работает</a>
+            <a href="#updates">Обновления</a>
+            <a href="#guides">Гайды</a>
+        </div>
+
+        <div class="nav__right">
+            <button class="burger" id="burger" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="links">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
             </button>
+            <button class="theme" id="theme" type="button" aria-label="Сменить тему" title="Сменить тему">☾</button>
+            <a class="btn p sm" href="https://github.com/oixro/WOTBO/raw/main/WOTBO.exe" download>Скачать</a>
+        </div>
+    </div>
+</nav>
 
-            <nav class="nav" id="nav" aria-label="Основная навигация">
-                <ul class="nav__list">
-                    <li><a class="nav__link" href="#tweaks">Твики</a></li>
-                    <li><a class="nav__link" href="#capabilities">Возможности</a></li>
-                    <li><a class="nav__link" href="#updates">Обновления</a></li>
-                    <li><a class="nav__link" href="#guides">Гайды</a></li>
-                    <li class="nav__cta">
-                        <a class="btn btn--primary btn--compact" href="https://github.com/oixro/WOTBO/raw/main/WOTBO.exe" download>
-                            Скачать
-                        </a>
-                    </li>
-                </ul>
-            </nav>
+<main id="main">
+    <header class="hero" id="top">
+        <div class="wrap">
+            <span class="tag">Windows Optimization Tool · Open Source</span>
+            <h1>Готовы ускорить Windows?</h1>
+            <p class="hero__lead">
+                WOTBO — лёгкий инструмент тонкой настройки системы: 48 твиков реестра, интерфейса
+                и GPU, очистка и откат изменений в один клик.
+            </p>
+            <div class="cta">
+                <a class="btn p" href="https://github.com/oixro/WOTBO/raw/main/WOTBO.exe" download>
+                    <span aria-hidden="true">⬇</span> Скачать WOTBO <span id="version">v2.33</span>
+                </a>
+                <a class="btn s" href="https://github.com/oixro/WOTBO" target="_blank" rel="noopener noreferrer">
+                    <span aria-hidden="true">📄</span> Репозиторий на GitHub
+                </a>
+            </div>
+            <p class="hero__beta">
+                <a class="beta-link" id="beta-link" href="https://github.com/oixro/WOTBO-DARK-Source/releases">
+                    Скачать beta версию
+                </a>
+            </p>
+            <p class="note">Windows 10 / 11 · x64 · 0,5 МБ · открытый исходный код</p>
         </div>
     </header>
 
-    <main id="main">
-        <section class="hero" id="download">
-            <div class="container hero__grid">
-                <div class="hero__copy">
-                    <p class="eyebrow">Windows 10 · 11 / x64 / <span id="version">v2.33</span></p>
-                    <h1 class="hero__title">Твики для Windows, которые можно <span class="hl">откатить</span></h1>
-                    <p class="hero__lead">
-                        WOTBO меняет реестр, питание, GPU и проводник и запоминает исходные значения,
-                        чтобы вернуть всё назад. 48 твиков, открытый код, без подписок.
-                    </p>
+    <section id="features">
+        <div class="wrap">
+            <h2>Функции</h2>
+            <p class="sub">Шесть разделов, 48 твиков — от реестра до установки программ.</p>
 
-                    <div class="hero__actions">
-                        <a class="btn btn--primary btn--large" href="https://github.com/oixro/WOTBO/raw/main/WOTBO.exe" download>
-                            Скачать для Windows
-                            <span class="btn__hint">v2.33 · x64 · 0,5 МБ</span>
-                        </a>
-                        <a class="beta-link" id="beta-link" href="https://github.com/oixro/WOTBO-DARK-Source/releases">
-                            Скачать beta версию
-                        </a>
-                    </div>
-                </div>
+            <div class="grid">
+                <article class="card">
+                    <b aria-hidden="true">⚙️</b>
+                    <h3>Основные твики</h3>
+                    <p>Настройки реестра, схема питания, гибернация, файл подкачки, MPO, USB, Spectre/Meltdown и приоритеты процессов.</p>
+                </article>
+                <article class="card">
+                    <b aria-hidden="true">🎮</b>
+                    <h3>Вкладка GPU</h3>
+                    <p>Профили NVIDIA, DirectPlay, отключение HDCP и Ansel, установка NV CleanInstall и DDU в один клик.</p>
+                </article>
+                <article class="card">
+                    <b aria-hidden="true">🧹</b>
+                    <h3>Очистка системы</h3>
+                    <p>Временные файлы, WinSxS, кеш обновлений, CompactOS и удаление OneDrive.</p>
+                </article>
+                <article class="card">
+                    <b aria-hidden="true">🛡️</b>
+                    <h3>Защитник</h3>
+                    <p>Отключение Windows Defender и восстановление защитника обратно, когда он снова нужен.</p>
+                </article>
+                <article class="card">
+                    <b aria-hidden="true">🎨</b>
+                    <h3>Интерфейс Windows</h3>
+                    <p>Синие папки, полупрозрачный проводник, старая шапка проводника, контекстное меню Windows 11 и анимации.</p>
+                </article>
+                <article class="card">
+                    <b aria-hidden="true">📦</b>
+                    <h3>Скачать проги</h3>
+                    <p>23 программы: 7-Zip, OBS, Discord, Telegram, Chrome, HWiNFO, CrystalDiskInfo и другие.</p>
+                </article>
+            </div>
+        </div>
+    </section>
 
+    <section class="alt" id="how">
+        <div class="wrap">
+            <h2>Как работает</h2>
+            <p class="sub">Никакой установки — скачали и настроили.</p>
+
+            <div class="steps">
+                <article class="step">
+                    <h3>Скачайте</h3>
+                    <p>Один portable-файл WOTBO.exe, без установщика и аккаунтов.</p>
+                </article>
+                <article class="step">
+                    <h3>Выберите твики</h3>
+                    <p>Отметьте нужное на шести вкладках. У каждого пункта есть подсказка.</p>
+                </article>
+                <article class="step">
+                    <h3>Примените</h3>
+                    <p>Программа меняет систему и пишет лог: видно, что именно произошло.</p>
+                </article>
+                <article class="step">
+                    <h3>Откатите</h3>
+                    <p>Передумали — верните исходные значения тем же переключателем.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="wrap">
+            <div class="stats">
+                <div><strong id="version-stat">2.33</strong><span>актуальная версия</span></div>
+                <div><strong>48</strong><span>твиков в шести разделах</span></div>
+                <div><strong>~0,5 МБ</strong><span>вес программы</span></div>
+                <div><strong>100%</strong><span>открытый код</span></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="alt" id="shots">
+        <div class="wrap">
+            <h2>Интерфейс</h2>
+            <p class="sub">Три раздела из шести — так это выглядит в программе.</p>
+
+            <div class="shots">
                 <figure class="shot">
-                    <img src="img/main.png" width="420" height="320" decoding="async"
-                         alt="Раздел «Основное»: список твиков реестра, Defender, питания, MPO и USB">
+                    <img src="img/main.png" width="420" height="320" loading="lazy" decoding="async"
+                         alt="Раздел «Основное»: реестр, Defender, схема питания, MPO и USB">
                     <figcaption>1. Основное · build 2.33</figcaption>
                 </figure>
+                <figure class="shot">
+                    <img src="img/gpu.png" width="420" height="320" loading="lazy" decoding="async"
+                         alt="Раздел «GPU»: HDCP, NVIDIA, Ansel, DirectPlay, NV CleanInstall и DDU">
+                    <figcaption>3. GPU · build 2.33</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img src="img/programs.png" width="420" height="320" loading="lazy" decoding="async"
+                         alt="Раздел «Скачать проги»: список из 23 программ">
+                    <figcaption>5. Скачать проги · build 2.33</figcaption>
+                </figure>
             </div>
-
-            <div class="container">
-                <dl class="spec">
-                    <div class="spec__cell">
-                        <dt>Платформа</dt>
-                        <dd>Windows 10 и 11, x64</dd>
-                    </div>
-                    <div class="spec__cell">
-                        <dt>Твиков</dt>
-                        <dd>48 в шести разделах</dd>
-                    </div>
-                    <div class="spec__cell">
-                        <dt>Размер</dt>
-                        <dd>0,5 МБ, один exe</dd>
-                    </div>
-                    <div class="spec__cell">
-                        <dt>Лицензия</dt>
-                        <dd>открытый код, бесплатно</dd>
-                    </div>
-                </dl>
-            </div>
-        </section>
-
-        <section class="section" id="tweaks" aria-labelledby="tweaks-title">
-            <div class="container">
-                <header class="section__head">
-                    <p class="eyebrow">Твики</p>
-                    <h2 id="tweaks-title">Что меняет WOTBO</h2>
-                    <p class="lead">
-                        48 настроек в шести разделах. Каждая применяется и откатывается отдельно —
-                        можно взять только то, что нужно.
-                    </p>
-                </header>
-
-                <div class="cards reveal">
-                    <figure class="card" data-accent="1">
-                        <img src="img/main.png" width="420" height="320" loading="lazy" decoding="async"
-                             alt="Раздел «Основное»: реестр, Defender, схема питания, MPO, USB">
-                        <figcaption>
-                            <p class="card__eyebrow">Раздел 1</p>
-                            <h3>Основное</h3>
-                            <p>Реестр, Defender, схема питания, гибернация, MPO, USB, Spectre/Meltdown, файл подкачки.</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="card" data-accent="3">
-                        <img src="img/gpu.png" width="420" height="320" loading="lazy" decoding="async"
-                             alt="Раздел «GPU»: HDCP, NVIDIA, Ansel, DirectPlay, NV CleanInstall и DDU">
-                        <figcaption>
-                            <p class="card__eyebrow">Раздел 3</p>
-                            <h3>GPU</h3>
-                            <p>HDCP, настройки NVIDIA, Ansel, DirectPlay, установка NV CleanInstall и DDU.</p>
-                        </figcaption>
-                    </figure>
-
-                    <figure class="card" data-accent="5">
-                        <img src="img/programs.png" width="420" height="320" loading="lazy" decoding="async"
-                             alt="Раздел «Скачать проги»: список из 23 программ для установки">
-                        <figcaption>
-                            <p class="card__eyebrow">Раздел 5</p>
-                            <h3>Скачать проги</h3>
-                            <p>23 программы в один клик: 7-Zip, OBS, Discord, Telegram, Chrome, HWiNFO и другие.</p>
-                        </figcaption>
-                    </figure>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="capabilities" aria-labelledby="capabilities-title">
-            <div class="container">
-                <header class="section__head">
-                    <p class="eyebrow">Возможности</p>
-                    <h2 id="capabilities-title">Шесть разделов</h2>
-                    <p class="lead">Номера совпадают с вкладками в программе.</p>
-                </header>
-
-                <div class="panels reveal">
-                    <article class="panel" data-accent="1">
-                        <p class="panel__num" aria-hidden="true">1</p>
-                        <h3>Основное</h3>
-                        <p>Реестр, Defender, схема питания, гибернация, файл подкачки, MPO, USB, Spectre/Meltdown, MMAgent, Win32Priority.</p>
-                    </article>
-
-                    <article class="panel" data-accent="2">
-                        <p class="panel__num" aria-hidden="true">2</p>
-                        <h3>Интерфейс</h3>
-                        <p>Кнопки окон, старая шапка проводника, контекстное меню Windows 11, синие папки, полупрозрачный проводник, анимации.</p>
-                    </article>
-
-                    <article class="panel" data-accent="3">
-                        <p class="panel__num" aria-hidden="true">3</p>
-                        <h3>GPU</h3>
-                        <p>HDCP, NVIDIA и Nvidia Profile Inspector, Ansel, DirectPlay, NV CleanInstall, DDU.</p>
-                    </article>
-
-                    <article class="panel" data-accent="4">
-                        <p class="panel__num" aria-hidden="true">4</p>
-                        <h3>Дополнительно</h3>
-                        <p>Политики Edge, удаление OneDrive, очистка WinSxS и обновлений, CompactOS, ffmpeg, закрепление окон.</p>
-                    </article>
-
-                    <article class="panel" data-accent="5">
-                        <p class="panel__num" aria-hidden="true">5</p>
-                        <h3>Скачать проги</h3>
-                        <p>23 программы: браузеры, утилиты, кодеки. Ссылки ведут на актуальные версии.</p>
-                    </article>
-
-                    <article class="panel" data-accent="6">
-                        <p class="panel__num" aria-hidden="true">6</p>
-                        <h3>PC Info</h3>
-                        <p>Процессор, материнская плата, GPU, объём ОЗУ, экран, версия Windows и дата установки.</p>
-                    </article>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="advantages" aria-labelledby="advantages-title">
-            <div class="container">
-                <header class="section__head">
-                    <p class="eyebrow">Почему так</p>
-                    <h2 id="advantages-title">Как это устроено</h2>
-                </header>
-
-                <dl class="notes reveal">
-                    <div class="note">
-                        <dt>Откат</dt>
-                        <dd>Каждый твик помнит исходные значения и возвращает их. Ничего не настраивается «навсегда».</dd>
-                    </div>
-                    <div class="note">
-                        <dt>Открытый код</dt>
-                        <dd>Исходники на GitHub: видно, какие ключи реестра и файлы меняет каждый твик.</dd>
-                    </div>
-                    <div class="note">
-                        <dt>Без подписок</dt>
-                        <dd>Нет платных версий, лицензий и рекламы. Проект бесплатный целиком.</dd>
-                    </div>
-                </dl>
-            </div>
-        </section>
-
-        <section class="section" id="updates" aria-labelledby="updates-title">
-            <div class="container">
-                <header class="section__head">
-                    <p class="eyebrow">Обновления</p>
-                    <h2 id="updates-title">Последнее обновление</h2>
-                    <p class="lead muted" id="changelog-meta">Загрузка списка изменений…</p>
-                </header>
-
-                <div class="changelog reveal" id="changelog" aria-live="polite" aria-busy="true">
-                    <p class="muted">Загрузка…</p>
-                </div>
-
-                <p class="more">
-                    <a href="https://github.com/oixro/WOTBO/blob/main/README.md" target="_blank" rel="noopener noreferrer">
-                        Полная история версий на GitHub
-                    </a>
-                </p>
-            </div>
-        </section>
-
-        <section class="section" id="guides" aria-labelledby="guides-title">
-            <div class="container">
-                <header class="section__head">
-                    <p class="eyebrow">Гайды</p>
-                    <h2 id="guides-title">Видео по настройке</h2>
-                </header>
-
-                <div class="video reveal">
-                    <iframe
-                        src="https://www.youtube.com/embed/videoseries?list=PLjWyGi5q-mOXJYU0YQW-LEpbJ5K7wCxgH"
-                        title="Плейлист с гайдами по WOTBO"
-                        loading="lazy"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                        referrerpolicy="strict-origin-when-cross-origin"
-                        allowfullscreen></iframe>
-                </div>
-            </div>
-        </section>
-
-        <section class="section" id="requirements" aria-labelledby="requirements-title">
-            <div class="container">
-                <header class="section__head">
-                    <p class="eyebrow">Требования</p>
-                    <h2 id="requirements-title">Что нужно для запуска</h2>
-                </header>
-
-                <dl class="spec-table reveal">
-                    <div class="spec-table__row">
-                        <dt>Система</dt>
-                        <dd>Windows 10 или Windows 11, x64</dd>
-                    </div>
-                    <div class="spec-table__row">
-                        <dt>Платформа</dt>
-                        <dd>.NET Framework 4.8 — уже входит в Windows 10 и 11</dd>
-                    </div>
-                    <div class="spec-table__row">
-                        <dt>Права</dt>
-                        <dd>Запуск от имени администратора: твики меняют реестр и системные файлы</dd>
-                    </div>
-                    <div class="spec-table__row">
-                        <dt>Установка</dt>
-                        <dd>Не нужна: один exe, около 0,5 МБ</dd>
-                    </div>
-                </dl>
-            </div>
-        </section>
-    </main>
-
-    <footer class="footer">
-        <div class="container footer__inner">
-            <div class="footer__brand">
-                <span class="logo__name">WOTBO</span>
-                <span class="logo__tagline">Windows optimization tool</span>
-            </div>
-
-            <ul class="socials" aria-label="Ссылки на автора">
-                <li>
-                    <a class="social" href="https://t.me/oixro" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
-                        <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 448 512">
-                            <path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/>
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a class="social" href="https://vk.com/oixro" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
-                        <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 576 512">
-                            <path fill="currentColor" d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z"/>
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a class="social" href="https://www.youtube.com/c/oixro" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
-                        <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 576 512">
-                            <path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/>
-                        </svg>
-                    </a>
-                </li>
-                <li>
-                    <a class="social" href="https://github.com/oixro/WOTBO-DARK-Source" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
-                        <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 512 512">
-                            <path fill="currentColor" d="M256 32C132.3 32 32 132.3 32 256c0 99.1 64.2 183.2 153.3 212.9 11.2 2.1 15.3-4.9 15.3-10.8 0-5.3-.2-19.4-.3-38.1-62.4 13.6-75.6-30.1-75.6-30.1-10.2-25.9-24.9-32.8-24.9-32.8-20.4-13.9 1.5-13.6 1.5-13.6 22.5 1.6 34.4 23.1 34.4 23.1 20 34.3 52.5 24.4 65.3 18.6 2-14.5 7.8-24.4 14.2-30-49.8-5.7-102.2-24.9-102.2-110.9 0-24.5 8.8-44.5 23.1-60.2-2.3-5.7-10-28.6 2.2-59.6 0 0 18.8-6 61.6 23 17.9-5 37.1-7.5 56.2-7.6 19.1.1 38.3 2.6 56.2 7.6 42.8-29 61.6-23 61.6-23 12.2 31 4.5 53.9 2.2 59.6 14.4 15.7 23.1 35.7 23.1 60.2 0 86.2-52.5 105.1-102.4 110.7 8.1 6.9 15.2 20.6 15.2 41.5 0 30-.3 54.2-.3 61.6 0 5.9 4 13 15.4 10.8C415.9 439.2 480 355.1 480 256 480 132.3 379.7 32 256 32z"/>
-                        </svg>
-                    </a>
-                </li>
-            </ul>
-
-            <p class="footer__note">
-                © <span id="year">2025</span> oixro. Не связан с Microsoft; Windows — торговая марка Microsoft.
-            </p>
-
-            <a class="footer__top" href="#main">Наверх ↑</a>
         </div>
-    </footer>
+    </section>
 
-    <dialog class="beta" id="beta-dialog" aria-labelledby="beta-title">
-        <div class="beta__head">
-            <div>
-                <p class="beta__kicker">Beta</p>
-                <h2 class="beta__title" id="beta-title">Beta-версия WOTBO</h2>
+    <section id="updates">
+        <div class="wrap">
+            <h2>Последние обновления</h2>
+            <p class="sub">Из журнала изменений проекта.</p>
+
+            <div class="log" id="changelog" aria-live="polite" aria-busy="true">
+                <div><p>Загрузка…</p></div>
             </div>
-            <button class="beta__close" type="button" aria-label="Закрыть" data-beta-close>
-                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-                    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/>
-                </svg>
-            </button>
-        </div>
 
-        <p class="beta__lead">
-            Предрелизная сборка из ветки <code>master</code> репозитория
-            <a href="https://github.com/oixro/WOTBO-DARK-Source" target="_blank" rel="noopener noreferrer">WOTBO-DARK-Source</a>.
-            Собирается автоматически, полный цикл проверок не проходит.
-        </p>
-
-        <ul class="beta__risks">
-            <li><strong>Нестабильность.</strong> Может зависать, падать и вести себя непредсказуемо.</li>
-            <li><strong>Риск «окирпичить» Windows.</strong> Неудачный твик может привести к системе, которая не загрузится.</li>
-            <li><strong>Непредвиденные изменения.</strong> Настройки могут измениться или слететь без предупреждения.</li>
-            <li><strong>Потери FPS.</strong> Часть твиков может наоборот снизить производительность в играх.</li>
-        </ul>
-
-        <p class="beta__note">Сделай точку восстановления или бэкап перед запуском.</p>
-
-        <div class="beta__timer">
-            <div class="beta__bar" aria-hidden="true"><span id="beta-progress"></span></div>
-            <p class="beta__countdown" id="beta-countdown" aria-live="polite">
-                Ссылка станет доступна через 10 с — прочитай предупреждения.
+            <p class="log__more">
+                <a class="btn s" href="https://github.com/oixro/WOTBO/blob/main/README.md" target="_blank" rel="noopener noreferrer">
+                    Полный changelog на GitHub →
+                </a>
             </p>
         </div>
+    </section>
 
-        <div class="beta__actions">
-            <a class="btn btn--primary is-disabled" id="beta-download"
-               href="https://github.com/oixro/WOTBO-DARK-Source/releases"
-               aria-disabled="true">
-                Скачать beta
+    <section class="alt" id="guides">
+        <div class="wrap">
+            <h2>Гайды</h2>
+            <p class="sub">Видео по настройке и использованию программы.</p>
+
+            <div class="video">
+                <iframe
+                    src="https://www.youtube.com/embed/videoseries?list=PLjWyGi5q-mOXJYU0YQW-LEpbJ5K7wCxgH"
+                    title="Плейлист с гайдами по WOTBO"
+                    loading="lazy"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <section id="requirements">
+        <div class="wrap">
+            <h2>Требования</h2>
+            <p class="sub">Всё, что нужно для запуска.</p>
+
+            <div class="grid grid--tight">
+                <article class="card">
+                    <h3>Система</h3>
+                    <p>Windows 10 или Windows 11, x64.</p>
+                </article>
+                <article class="card">
+                    <h3>Платформа</h3>
+                    <p>.NET Framework 4.8 — уже входит в Windows 10 и 11.</p>
+                </article>
+                <article class="card">
+                    <h3>Права</h3>
+                    <p>Запуск от имени администратора: твики меняют реестр и системные файлы.</p>
+                </article>
+                <article class="card">
+                    <h3>Установка</h3>
+                    <p>Не нужна: один exe, около 0,5 МБ.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section class="final">
+        <div class="wrap">
+            <h2>Ускорьте свою систему сегодня</h2>
+            <p class="sub">Бесплатно, без рекламы и регистрации.</p>
+            <a class="btn p" href="https://github.com/oixro/WOTBO/raw/main/WOTBO.exe" download>
+                <span aria-hidden="true">⬇</span> Скачать WOTBO
             </a>
-            <button class="beta__cancel" type="button" data-beta-close>Отмена</button>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="wrap">
+        <div class="fg">
+            <div class="fg__brand">
+                <a class="logo" href="#top">
+                    <span class="logo__mark"><img src="img/icon.png" alt="" width="32" height="32" decoding="async"></span>
+                    <span class="logo__text">WOTBO</span>
+                </a>
+                <p>Windows optimization tool by oixro — бесплатный инструмент с открытым кодом для глубокой настройки системы.</p>
+                <ul class="socials" aria-label="Ссылки на автора">
+                    <li>
+                        <a href="https://t.me/oixro" target="_blank" rel="noopener noreferrer" aria-label="Telegram">
+                            <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 448 512"><path fill="currentColor" d="M446.7 98.6l-67.6 318.8c-5.1 22.5-18.4 28.1-37.3 17.5l-103-75.9-49.7 47.8c-5.5 5.5-10.1 10.1-20.7 10.1l7.4-104.9 190.9-172.5c8.3-7.4-1.8-11.5-12.9-4.1L117.8 284 16.2 252.2c-22.1-6.9-22.5-22.1 4.6-32.7L418.2 66.4c18.4-6.9 34.5 4.1 28.5 32.2z"/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://vk.com/oixro" target="_blank" rel="noopener noreferrer" aria-label="ВКонтакте">
+                            <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 576 512"><path fill="currentColor" d="M545 117.7c3.7-12.5 0-21.7-17.8-21.7h-58.9c-15 0-21.9 7.9-25.6 16.7 0 0-30 73.1-72.4 120.5-13.7 13.7-20 18.1-27.5 18.1-3.7 0-9.4-4.4-9.4-16.9V117.7c0-15-4.2-21.7-16.6-21.7h-92.6c-9.4 0-15 7-15 13.5 0 14.2 21.2 17.5 23.4 57.5v86.8c0 19-3.4 22.5-10.9 22.5-20 0-68.6-73.4-97.4-157.4-5.8-16.3-11.5-22.9-26.6-22.9H38.8c-16.8 0-20.2 7.9-20.2 16.7 0 15.6 20 93.1 93.1 195.5C160.4 378.1 229 416 291.4 416c37.5 0 42.1-8.4 42.1-22.9 0-66.8-3.4-73.1 15.4-73.1 8.7 0 23.7 4.4 58.7 38.1 40 40 46.6 57.9 69 57.9h58.9c16.8 0 25.3-8.4 20.4-25-11.2-34.9-86.9-106.7-90.3-111.5-8.7-11.2-6.2-16.2 0-26.2.1-.1 72-101.3 79.4-135.6z"/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://www.youtube.com/c/oixro" target="_blank" rel="noopener noreferrer" aria-label="YouTube">
+                            <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 576 512"><path fill="currentColor" d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"/></svg>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="https://github.com/oixro/WOTBO-DARK-Source" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+                            <svg role="img" aria-hidden="true" focusable="false" viewBox="0 0 512 512"><path fill="currentColor" d="M256 32C132.3 32 32 132.3 32 256c0 99.1 64.2 183.2 153.3 212.9 11.2 2.1 15.3-4.9 15.3-10.8 0-5.3-.2-19.4-.3-38.1-62.4 13.6-75.6-30.1-75.6-30.1-10.2-25.9-24.9-32.8-24.9-32.8-20.4-13.9 1.5-13.6 1.5-13.6 22.5 1.6 34.4 23.1 34.4 23.1 20 34.3 52.5 24.4 65.3 18.6 2-14.5 7.8-24.4 14.2-30-49.8-5.7-102.2-24.9-102.2-110.9 0-24.5 8.8-44.5 23.1-60.2-2.3-5.7-10-28.6 2.2-59.6 0 0 18.8-6 61.6 23 17.9-5 37.1-7.5 56.2-7.6 19.1.1 38.3 2.6 56.2 7.6 42.8-29 61.6-23 61.6-23 12.2 31 4.5 53.9 2.2 59.6 14.4 15.7 23.1 35.7 23.1 60.2 0 86.2-52.5 105.1-102.4 110.7 8.1 6.9 15.2 20.6 15.2 41.5 0 30-.3 54.2-.3 61.6 0 5.9 4 13 15.4 10.8C415.9 439.2 480 355.1 480 256 480 132.3 379.7 32 256 32z"/></svg>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+
+            <div>
+                <h4>Продукт</h4>
+                <a href="https://github.com/oixro/WOTBO/raw/main/WOTBO.exe">Скачать</a>
+                <a href="#updates">Changelog</a>
+                <a href="https://github.com/oixro/WOTBO/commits/main/" target="_blank" rel="noopener noreferrer">История коммитов</a>
+                <a href="https://github.com/oixro/WOTBO" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+
+            <div>
+                <h4>Справка</h4>
+                <a href="#features">Функции</a>
+                <a href="#how">Как работает</a>
+                <a href="#guides">Гайды</a>
+                <a href="https://github.com/oixro/WOTBO/issues" target="_blank" rel="noopener noreferrer">Вопросы и баги</a>
+            </div>
+
+            <div>
+                <h4>Проект</h4>
+                <a href="https://github.com/oixro" target="_blank" rel="noopener noreferrer">Автор — oixro</a>
+                <a href="https://github.com/oixro/WOTBO-DARK-Source" target="_blank" rel="noopener noreferrer">Исходный код</a>
+                <a href="https://github.com/oixro/WOTBO-DARK-Source/releases" target="_blank" rel="noopener noreferrer">Beta-сборки</a>
+                <a href="https://github.com/oixro/WOTBO/issues" target="_blank" rel="noopener noreferrer">Сообщить об ошибке</a>
+            </div>
         </div>
 
-        <p class="beta__meta" id="beta-meta">Определяю последнюю сборку…</p>
-    </dialog>
+        <p class="copy">© <span id="year">2026</span> WOTBO · Windows optimization tool by oixro. Применяйте твики осознанно и делайте резервные копии.</p>
+    </div>
+</footer>
 
-    <script src="js/main.js?v=20261114b" defer></script>
+<dialog class="beta" id="beta-dialog" aria-labelledby="beta-title">
+    <div class="beta__head">
+        <div>
+            <p class="beta__kicker">Beta</p>
+            <h2 id="beta-title">Beta-версия WOTBO</h2>
+        </div>
+        <button class="beta__close" type="button" aria-label="Закрыть" data-beta-close>
+            <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/>
+            </svg>
+        </button>
+    </div>
+
+    <p class="beta__lead">
+        Предрелизная сборка из ветки <code>master</code> репозитория
+        <a href="https://github.com/oixro/WOTBO-DARK-Source" target="_blank" rel="noopener noreferrer">WOTBO-DARK-Source</a>.
+        Собирается автоматически, полный цикл проверок не проходит.
+    </p>
+
+    <ul class="beta__risks">
+        <li><strong>Нестабильность.</strong> Может зависать, падать и вести себя непредсказуемо.</li>
+        <li><strong>Риск «окирпичить» Windows.</strong> Неудачный твик может привести к системе, которая не загрузится.</li>
+        <li><strong>Непредвиденные изменения.</strong> Настройки могут измениться или слететь без предупреждения.</li>
+        <li><strong>Потери FPS.</strong> Часть твиков может наоборот снизить производительность в играх.</li>
+    </ul>
+
+    <p class="beta__note">Сделай точку восстановления или бэкап перед запуском.</p>
+
+    <div class="beta__timer">
+        <div class="beta__bar" aria-hidden="true"><span id="beta-progress"></span></div>
+        <p class="beta__countdown" id="beta-countdown" aria-live="polite">
+            Ссылка станет доступна через 10 с — прочитай предупреждения.
+        </p>
+    </div>
+
+    <div class="beta__actions">
+        <a class="btn p is-disabled" id="beta-download"
+           href="https://github.com/oixro/WOTBO-DARK-Source/releases"
+           aria-disabled="true">Скачать beta</a>
+        <button class="beta__cancel" type="button" data-beta-close>Отмена</button>
+    </div>
+
+    <p class="beta__meta" id="beta-meta">Определяю последнюю сборку…</p>
+</dialog>
+
+<script src="js/main.js?v=20261114d" defer></script>
 </body>
 </html>

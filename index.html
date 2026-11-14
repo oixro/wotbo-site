@@ -15,12 +15,12 @@
 <meta property="og:url" content="https://wotbo.pro/">
 <meta property="og:title" content="WOTBO — оптимизация Windows">
 <meta property="og:description" content="48 твиков для Windows: реестр, интерфейс, GPU, очистка. Каждый применяется и откатывается отдельно.">
-<meta property="og:image" content="https://wotbo.pro/img/main.png">
+<meta property="og:image" content="https://wotbo.pro/img/preview.jpg">
 <meta name="twitter:card" content="summary_large_image">
 
 <link rel="icon" href="img/icon.png" type="image/png" sizes="192x192">
 <link rel="apple-touch-icon" href="img/icon.png">
-<link rel="stylesheet" href="css/style.css?v=20261114f">
+<link rel="stylesheet" href="css/style.css?v=20261115a">
 
 <script>
 /* тема до первой отрисовки — без вспышки */
@@ -113,33 +113,33 @@
             <div class="grid">
                 <article class="card">
                     <b aria-hidden="true">⚙️</b>
-                    <h3>Основные твики</h3>
-                    <p>Настройки реестра, схема питания, гибернация, файл подкачки, MPO, USB, Spectre/Meltdown и приоритеты процессов.</p>
-                </article>
-                <article class="card">
-                    <b aria-hidden="true">🎮</b>
-                    <h3>Вкладка GPU</h3>
-                    <p>Профили NVIDIA, DirectPlay, отключение HDCP и Ansel, установка NV CleanInstall и DDU в один клик.</p>
-                </article>
-                <article class="card">
-                    <b aria-hidden="true">🧹</b>
-                    <h3>Очистка системы</h3>
-                    <p>Временные файлы, WinSxS, кеш обновлений, CompactOS и удаление OneDrive.</p>
-                </article>
-                <article class="card">
-                    <b aria-hidden="true">🛡️</b>
-                    <h3>Защитник</h3>
-                    <p>Отключение Windows Defender и восстановление защитника обратно, когда он снова нужен.</p>
+                    <h3>Основное</h3>
+                    <p>Реестр, Defender, схема питания, гибернация, файл подкачки, MPO, USB, Spectre/Meltdown, задержка звука, DWM Input, DPC/ISR.</p>
                 </article>
                 <article class="card">
                     <b aria-hidden="true">🎨</b>
-                    <h3>Интерфейс Windows</h3>
-                    <p>Синие папки, полупрозрачный проводник, старая шапка проводника, контекстное меню Windows 11 и анимации.</p>
+                    <h3>Интерфейс</h3>
+                    <p>Кнопки окон, мелкие настройки проводника, сжатие обоев, синие папки, старое контекстное меню, прозрачный проводник, новые курсоры.</p>
+                </article>
+                <article class="card">
+                    <b aria-hidden="true">🎮</b>
+                    <h3>GPU</h3>
+                    <p>HDCP, профили NVIDIA и Inspector, Ansel, DirectPlay, установка NV CleanInstall и DDU в один клик.</p>
+                </article>
+                <article class="card">
+                    <b aria-hidden="true">🧹</b>
+                    <h3>Дополнительно</h3>
+                    <p>OneDrive, WinSxS, сжатие системы, временные файлы, кеш обновлений и изображений, Edge, Bufferbloat, приоритеты процессов.</p>
                 </article>
                 <article class="card">
                     <b aria-hidden="true">📦</b>
                     <h3>Скачать проги</h3>
-                    <p>23 программы: 7-Zip, OBS, Discord, Telegram, Chrome, HWiNFO, CrystalDiskInfo и другие.</p>
+                    <p>19 программ: 7-Zip, Steam, Discord, Telegram, OBS, Chrome, HWiNFO, RustDesk и другие.</p>
+                </article>
+                <article class="card">
+                    <b aria-hidden="true">🖥️</b>
+                    <h3>PC Info</h3>
+                    <p>Процессор и его частота, материнская плата, GPU, объём ОЗУ, экран, версия Windows и дата установки.</p>
                 </article>
             </div>
         </div>
@@ -185,23 +185,38 @@
     <section class="alt" id="shots">
         <div class="wrap">
             <h2>Интерфейс</h2>
-            <p class="sub">Три раздела из шести — так это выглядит в программе.</p>
+            <p class="sub">Все шесть разделов — так это выглядит в программе.</p>
 
             <div class="shots">
                 <figure class="shot">
-                    <img src="img/main.png" width="420" height="320" loading="lazy" decoding="async"
-                         alt="Раздел «Основное»: реестр, Defender, схема питания, MPO и USB">
-                    <figcaption>1. Основное · build 2.33</figcaption>
+                    <img src="img/main.webp" width="700" height="541" loading="lazy" decoding="async"
+                         alt="Раздел «Основное»: реестр, Defender, питание, MPO, USB, файл подкачки">
+                    <figcaption>1. Основное</figcaption>
                 </figure>
                 <figure class="shot">
-                    <img src="img/gpu.png" width="420" height="320" loading="lazy" decoding="async"
-                         alt="Раздел «GPU»: HDCP, NVIDIA, Ansel, DirectPlay, NV CleanInstall и DDU">
-                    <figcaption>3. GPU · build 2.33</figcaption>
+                    <img src="img/interface.webp" width="700" height="541" loading="lazy" decoding="async"
+                         alt="Раздел «Интерфейс»: кнопки окон, синие папки, контекстное меню, курсоры">
+                    <figcaption>2. Интерфейс</figcaption>
                 </figure>
                 <figure class="shot">
-                    <img src="img/programs.png" width="420" height="320" loading="lazy" decoding="async"
-                         alt="Раздел «Скачать проги»: список из 23 программ">
-                    <figcaption>5. Скачать проги · build 2.33</figcaption>
+                    <img src="img/gpu.webp" width="700" height="541" loading="lazy" decoding="async"
+                         alt="Раздел «GPU»: DirectPlay, NV CleanInstall, DDU">
+                    <figcaption>3. GPU</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img src="img/extra.webp" width="700" height="541" loading="lazy" decoding="async"
+                         alt="Раздел «Дополнительно»: OneDrive, WinSxS, очистка, кеш, Edge">
+                    <figcaption>4. Дополнительно</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img src="img/downloads.webp" width="700" height="541" loading="lazy" decoding="async"
+                         alt="Раздел «Скачать проги»: список из 19 программ">
+                    <figcaption>5. Скачать проги</figcaption>
+                </figure>
+                <figure class="shot">
+                    <img src="img/pc-info.webp" width="700" height="541" loading="lazy" decoding="async"
+                         alt="Раздел «PC Info»: процессор, плата, GPU, ОЗУ, экран, версия Windows">
+                    <figcaption>6. PC Info</figcaption>
                 </figure>
             </div>
         </div>

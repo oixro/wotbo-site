@@ -488,7 +488,7 @@ h2 {
 
 .shots {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
 }
 
@@ -853,12 +853,6 @@ footer {
 }
 
 /* Responsive --------------------------------------------------------------- */
-
-@media (max-width: 900px) {
-    .shots {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-}
 
 @media (max-width: 760px) {
     .burger {

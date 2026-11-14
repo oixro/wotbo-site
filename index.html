@@ -23,7 +23,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300..800&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css?v=20261112">
+    <link rel="stylesheet" href="css/style.css?v=20261114">
 
     <script type="application/ld+json">
     {
@@ -84,6 +84,9 @@
                     <a class="btn btn--primary" href="https://github.com/oixro/WOTBO/raw/main/WOTBO.exe" download>
                         Скачать
                         <span class="btn__hint">Windows 10 / 11</span>
+                    </a>
+                    <a class="beta-link" id="beta-link" href="https://github.com/oixro/WOTBO-DARK-Source/releases">
+                        Скачать beta версию
                     </a>
                 </div>
 
@@ -333,6 +336,55 @@
         </div>
     </footer>
 
-    <script src="js/main.js?v=20261112" defer></script>
+    <dialog class="beta" id="beta-dialog" aria-labelledby="beta-title">
+        <div class="beta__head">
+            <div>
+                <p class="beta__kicker">Beta</p>
+                <h2 class="beta__title" id="beta-title">Beta-версия WOTBO</h2>
+            </div>
+            <button class="beta__close" type="button" aria-label="Закрыть" data-beta-close>
+                <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+                    <path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M6 6l12 12M18 6L6 18"/>
+                </svg>
+            </button>
+        </div>
+
+        <p class="beta__lead">
+            Это предрелизная сборка из ветки <code>master</code> репозитория
+            <a href="https://github.com/oixro/WOTBO-DARK-Source" target="_blank" rel="noopener noreferrer">WOTBO-DARK-Source</a>.
+            Она собирается автоматически и не проходит полный цикл проверок.
+        </p>
+
+        <ul class="beta__risks">
+            <li><strong>Нестабильность.</strong> Программа может зависать, падать или вести себя непредсказуемо.</li>
+            <li><strong>Риск «окирпичить» Windows.</strong> Неудачный твик может привести к системе, которая не загрузится.</li>
+            <li><strong>Непредвиденные изменения.</strong> Настройки системы могут измениться или слететь без предупреждения.</li>
+            <li><strong>Потери FPS.</strong> Часть твиков может наоборот снизить производительность в играх.</li>
+        </ul>
+
+        <p class="beta__note">
+            Сделай точку восстановления или бэкап перед запуском. Всё, что делает beta, — на твой риск.
+        </p>
+
+        <div class="beta__timer">
+            <div class="beta__bar" aria-hidden="true"><span id="beta-progress"></span></div>
+            <p class="beta__countdown" id="beta-countdown" aria-live="polite">
+                Ссылка станет доступна через 10 с — прочитай предупреждения.
+            </p>
+        </div>
+
+        <div class="beta__actions">
+            <a class="btn btn--primary btn--beta is-disabled" id="beta-download"
+               href="https://github.com/oixro/WOTBO-DARK-Source/releases"
+               aria-disabled="true">
+                Скачать beta
+            </a>
+            <button class="beta__cancel" type="button" data-beta-close>Отмена</button>
+        </div>
+
+        <p class="beta__meta" id="beta-meta">Определяю последнюю сборку…</p>
+    </dialog>
+
+    <script src="js/main.js?v=20261114" defer></script>
 </body>
 </html>
